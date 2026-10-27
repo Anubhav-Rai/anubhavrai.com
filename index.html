@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Anubhav Rai · Software Engineer</title>
+<meta name="description" content="Anubhav Rai: platform software engineer in Bangalore. C, C++, Go, Python on Linux. curl contributor.">
+<meta property="og:title" content="Anubhav Rai · Software Engineer">
+<meta property="og:description" content="Platform software engineer. C, C++, Go, Python on Linux. curl contributor.">
+<meta property="og:url" content="https://anubhavrai.com">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%23101418'/><text x='16' y='22' font-family='monospace' font-size='15' font-weight='700' fill='%23f2b544' text-anchor='middle'>ar</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f6f3ec; --surface: #fffdf8; --ink: #15191d; --muted: #5d646b;
+    --line: #dcd6c9; --accent: #b4510f; --accent-soft: #f3e2d0;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #0f1215; --surface: #161a1f; --ink: #e9e6df; --muted: #9aa1a8;
+            --line: #2a3038; --accent: #f2b544; --accent-soft: #2b2416; }
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: var(--bg); color: var(--ink);
+         font: 17px/1.6 "IBM Plex Sans", system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+  a { color: inherit; text-decoration-color: var(--accent); text-underline-offset: 3px; }
+  a:hover { color: var(--accent); }
+  .wrap { max-width: 860px; margin: 0 auto; padding: 0 24px; }
+  .mono { font-family: "IBM Plex Mono", ui-monospace, monospace; }
+
+  nav { position: sticky; top: 0; z-index: 5; background: color-mix(in srgb, var(--bg) 88%, transparent);
+        backdrop-filter: blur(8px); border-bottom: 1px solid var(--line); }
+  nav .wrap { display: flex; justify-content: space-between; align-items: center; height: 56px; }
+  nav .brand { font-family: "IBM Plex Mono", monospace; font-weight: 500; text-decoration: none; }
+  nav .brand b { color: var(--accent); font-weight: 500; }
+  nav ul { list-style: none; display: flex; gap: 22px; margin: 0; padding: 0; font-size: 14px; }
+  nav ul a { text-decoration: none; color: var(--muted); }
+  nav ul a:hover { color: var(--ink); }
+
+  header.hero { padding: 96px 0 72px; }
+  .prompt { font-family: "IBM Plex Mono", monospace; font-size: 14px; color: var(--muted); margin: 0 0 18px; }
+  .prompt span { color: var(--accent); }
+  h1 { font-family: Fraunces, Georgia, serif; font-weight: 600; font-size: clamp(42px, 7vw, 68px);
+       line-height: 1.05; letter-spacing: -0.02em; margin: 0 0 22px; }
+  .lede { font-size: 20px; max-width: 620px; color: var(--muted); margin: 0 0 30px; }
+  .lede strong { color: var(--ink); font-weight: 500; }
+  .links { display: flex; flex-wrap: wrap; gap: 10px; }
+  .btn { font: 500 14px "IBM Plex Mono", monospace; padding: 9px 16px; border-radius: 8px;
+         border: 1px solid var(--line); background: var(--surface); text-decoration: none; }
+  .btn.primary { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+  .btn.primary:hover { background: var(--accent); border-color: var(--accent); color: var(--bg); }
+
+  section { padding: 56px 0; border-top: 1px solid var(--line); }
+  h2 { font-family: "IBM Plex Mono", monospace; font-size: 13px; font-weight: 500; letter-spacing: .12em;
+       text-transform: uppercase; color: var(--accent); margin: 0 0 28px; }
+  h3 { font-family: Fraunces, Georgia, serif; font-weight: 600; font-size: 24px; margin: 0; letter-spacing: -0.01em; }
+
+  .job-head { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 4px 16px; margin-bottom: 4px; }
+  .when { font-family: "IBM Plex Mono", monospace; font-size: 13px; color: var(--muted); }
+  .sub { color: var(--muted); margin: 0 0 18px; }
+  ul.points { margin: 0; padding: 0; list-style: none; }
+  ul.points li { position: relative; padding-left: 22px; margin-bottom: 12px; }
+  ul.points li::before { content: "›"; position: absolute; left: 4px; color: var(--accent); font-weight: 600; }
+  .metric { font-family: "IBM Plex Mono", monospace; font-size: 15px; background: var(--accent-soft); padding: 1px 5px; border-radius: 4px; }
+
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 16px; }
+  .card { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 20px 20px 18px;
+          display: flex; flex-direction: column; text-decoration: none; transition: transform .15s, border-color .15s; }
+  a.card:hover { transform: translateY(-2px); border-color: var(--accent); color: inherit; }
+  .card .tag { font-family: "IBM Plex Mono", monospace; font-size: 12px; color: var(--muted); margin-bottom: 10px; }
+  .card h3 { font-size: 21px; margin-bottom: 8px; }
+  .card p { margin: 0 0 14px; font-size: 15.5px; color: var(--muted); flex: 1; }
+  .card .go { font-family: "IBM Plex Mono", monospace; font-size: 13px; color: var(--accent); }
+  .card.feature { grid-column: 1 / -1; }
+  .card.feature p { max-width: 640px; }
+
+  .skills { display: grid; grid-template-columns: 170px 1fr; gap: 10px 24px; margin: 0; }
+  .skills dt { font-family: "IBM Plex Mono", monospace; font-size: 14px; color: var(--muted); padding-top: 2px; }
+  .skills dd { margin: 0; }
+
+  .contact p { font-size: 20px; max-width: 600px; margin: 0 0 24px; }
+  footer { padding: 32px 0 48px; color: var(--muted); font-size: 13px; font-family: "IBM Plex Mono", monospace; border-top: 1px solid var(--line); }
+
+  @media (max-width: 600px) {
+    body { font-size: 16px; }
+    .wrap { padding: 0 16px; }
+    nav ul { gap: 14px; font-size: 13px; }
+    nav ul li.hide-sm { display: none; }
+    header.hero { padding: 64px 0 52px; }
+    .lede { font-size: 18px; }
+    .skills { grid-template-columns: 1fr; gap: 2px; }
+    .skills dd { margin-bottom: 12px; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a class="brand" href="#top">anubhav<b>rai</b></a>
+    <ul>
+      <li><a href="#work">Work</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li class="hide-sm"><a href="#skills">Skills</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main id="top">
+  <header class="hero wrap">
+    <p class="prompt"><span>$</span> whoami</p>
+    <h1>Anubhav Rai</h1>
+    <p class="lede">Senior platform engineer in Bangalore. I write <strong>C, C++, Go and Python</strong> for Linux systems that ship on hardware running at <strong>5,000+ sites worldwide</strong>, and I'm a contributor to <strong>curl</strong>.</p>
+    <div class="links">
+      <a class="btn primary" href="mailto:anubhavrai737@gmail.com">Email me</a>
+      <a class="btn" href="https://github.com/Anubhav-Rai">GitHub</a>
+      <a class="btn" href="https://linkedin.com/in/anubhavrai">LinkedIn</a>
+    </div>
+  </header>
+
+  <section id="work">
+    <div class="wrap">
+      <h2>Work</h2>
+      <div class="job-head">
+        <h3>Radisys</h3>
+        <span class="when">Jun 2022 to now</span>
+      </div>
+      <p class="sub">Senior Software Engineer, Platform · Bangalore</p>
+      <ul class="points">
+        <li>Build and maintain the services and device-control software for a Linux-based hardware product shipped worldwide: sensors, thermals, pluggable modules and a standards-based diagnostics parser.</li>
+        <li>Extended an FSM-driven in-service upgrade framework to firmware (BIOS, CPLD, FPGA) with resumable downloads over libcurl, hardened against power loss mid-upgrade.</li>
+        <li>Root-caused lock contention in a multi-process shared-memory system and designed a self-healing watchdog with timed locks, owner tracking and reboot-reason logging.</li>
+        <li>Grew a Go end-to-end test framework that drives the product over gRPC through full upgrade scenarios, taking line coverage from <span class="metric">71%</span> to <span class="metric">88%</span>.</li>
+        <li>Shipped a cross-platform configuration validator in Go with a live terminal UI, so mistakes are caught before they reach production.</li>
+        <li>Work directly with customers such as Sony and Telefónica and with manufacturing partners in Taiwan, from requirements through to on-site incidents.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="wrap">
+      <h2>Projects &amp; open source</h2>
+      <div class="grid">
+        <a class="card feature" href="https://curl.se/docs/thanks.html">
+          <span class="tag">C · open source</span>
+          <h3>curl / libcurl contributor</h3>
+          <p>Found an upstream defect while building firmware downloads, shipped a workaround on our side, and contributed the resumable-download implementation. Listed among curl's ~3,700 contributors.</p>
+          <span class="go">curl.se/docs/thanks →</span>
+        </a>
+        <div class="card feature">
+          <span class="tag">Python · Swift · ibapi · pandas</span>
+          <h3>Algorithmic trading platform</h3>
+          <p>An event-driven execution system for Interactive Brokers that runs unattended 24×7 for a US SEC-registered family advisory firm, plus a research suite over ~1.5M minute bars and ~14M ticks with walk-forward validation.</p>
+        </div>
+        <a class="card" href="https://github.com/Anubhav-Rai/mousemap">
+          <span class="tag">Swift · macOS</span>
+          <h3>mousemap</h3>
+          <p>Trackpad-style smooth scrolling, wheel-only reversal and side-button remapping for ordinary mice. One file, no dependencies.</p>
+          <span class="go">github →</span>
+        </a>
+        <a class="card" href="https://github.com/Anubhav-Rai/Lumen">
+          <span class="tag">Rust · Tauri · Windows</span>
+          <h3>Lumen</h3>
+          <p>Monitor brightness from the Windows tray, for laptop panels and DDC/CI monitors: scroll the icon, hotkeys, or the command line.</p>
+          <span class="go">github →</span>
+        </a>
+        <a class="card" href="https://github.com/Anubhav-Rai/Clipstar">
+          <span class="tag">Swift · macOS</span>
+          <h3>Clipstar</h3>
+          <p>Screenshots and copies docked round the edge of the screen against the Milky Way. A space-themed fork of Tendedero.</p>
+          <span class="go">github →</span>
+        </a>
+        <div class="card">
+          <span class="tag">Startup · Y Combinator</span>
+          <h3>KuruX</h3>
+          <p>MVP of a private-equity marketplace, featured in Y Combinator's Startup School.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="wrap">
+      <h2>Toolbox</h2>
+      <dl class="skills">
+        <dt>languages</dt><dd>C, C++, Go, Python, Bash, Swift, Rust</dd>
+        <dt>systems</dt><dd>Linux (Debian, Open Network Linux), pthreads, shared memory, firmware upgrade flows</dd>
+        <dt>services</dt><dd>gRPC / protobuf, libcurl (HTTP, SFTP), event-driven design</dd>
+        <dt>quality</dt><dd>GDB, crash-dump analysis, gcov / lcov, Jenkins, Git</dd>
+        <dt>data</dt><dd>pandas, NumPy, multi-million-row analysis</dd>
+      </dl>
+    </div>
+  </section>
+
+  <section id="education">
+    <div class="wrap">
+      <h2>Education</h2>
+      <div class="job-head">
+        <h3>Delhi Technological University</h3>
+        <span class="when">2018 to 2022</span>
+      </div>
+      <p class="sub">B.Tech, Engineering Physics</p>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <div class="wrap">
+      <h2>Contact</h2>
+      <p>Open to backend, platform and infrastructure roles: remote, in India, or abroad.</p>
+      <div class="links">
+        <a class="btn primary" href="mailto:anubhavrai737@gmail.com">anubhavrai737@gmail.com</a>
+        <a class="btn" href="https://github.com/Anubhav-Rai">github.com/Anubhav-Rai</a>
+        <a class="btn" href="https://linkedin.com/in/anubhavrai">linkedin.com/in/anubhavrai</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">© 2026 Anubhav Rai · Bangalore</div>
+</footer>
+
+</body>
+</html>
